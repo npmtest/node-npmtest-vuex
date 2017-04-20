@@ -1,1 +1,40 @@
-{     "devDependencies": {         "vuex": "*",         "electron-lite": "kaizhu256/node-electron-lite#alpha",         "utility2": "kaizhu256/node-utility2#alpha"     },     "name":"npmtest-vuex",     "homepage": "https://github.com/npmtest/node-npmtest-vuex",     "repository": {         "type": "git",         "url": "https://github.com/npmtest/node-npmtest-vuex.git"     },     "scripts": {         "build-ci": "utility2 shReadmeTest build_ci.sh"     },     "version": "0.0.1" }
+{
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "description": "#### basic test coverage for  [vuex (v2.3.1)](https://github.com/vuejs/vuex#readme)  [![npm package](https://img.shields.io/npm/v/npmtest-vuex.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-vuex) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-vuex.svg)](https://travis-ci.org/npmtest/node-npmtest-vuex)",
+    "devDependencies": {
+        "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "utility2": "kaizhu256/node-utility2#alpha",
+        "vuex": "*"
+    },
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmtest/node-npmtest-vuex",
+    "keywords": [
+        "coverage",
+        "test",
+        "vuex"
+    ],
+    "license": "MIT",
+    "main": "lib.npmtest_vuex.js",
+    "name": "npmtest-vuex",
+    "nameAlias": "npmtest_vuex",
+    "nameOriginal": "npmtest-vuex",
+    "os": [
+        "darwin",
+        "linux"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/npmtest/node-npmtest-vuex.git"
+    },
+    "scripts": {
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "npm install \"kaizhu256/node-utility2#alpha\" && utility2 shDeployHeroku",
+        "postinstall": "[ ! -f npm_scripts.sh ] || ./npm_scripts.sh postinstall",
+        "start": "PORT=${PORT:-8080} utility2 start test.js",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
+    },
+    "version": "0.0.1"
+}
